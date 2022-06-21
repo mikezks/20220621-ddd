@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-monorepo/vertrieb/domain": ["libs/vertrieb/domain/src/index.ts"],
+      "@nx-monorepo/vertrieb/feature-haendler-suche": [
+        "libs/vertrieb/feature-haendler-suche/src/index.ts"
+      ],
+      "@nx-monorepo/vertrieb/ui-common": [
+        "libs/vertrieb/ui-common/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

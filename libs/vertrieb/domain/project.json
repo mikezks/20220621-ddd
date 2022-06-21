@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/vertrieb/domain/src",
+  "prefix": "vertrieb",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/vertrieb/domain"],
+      "options": {
+        "project": "libs/vertrieb/domain/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/vertrieb/domain/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/vertrieb/domain/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/vertrieb/domain"],
+      "options": {
+        "jestConfig": "libs/vertrieb/domain/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/vertrieb/domain/**/*.ts",
+          "libs/vertrieb/domain/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:vertrieb", "type:domain-logic"]
+}

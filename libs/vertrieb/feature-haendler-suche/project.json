@@ -1,0 +1,41 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/vertrieb/feature-haendler-suche/src",
+  "prefix": "vertrieb",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/vertrieb/feature-haendler-suche"],
+      "options": {
+        "project": "libs/vertrieb/feature-haendler-suche/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/vertrieb/feature-haendler-suche/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/vertrieb/feature-haendler-suche/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/vertrieb/feature-haendler-suche"],
+      "options": {
+        "jestConfig": "libs/vertrieb/feature-haendler-suche/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/vertrieb/feature-haendler-suche/**/*.ts",
+          "libs/vertrieb/feature-haendler-suche/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:vertrieb", "type:feature"]
+}

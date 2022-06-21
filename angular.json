@@ -3,6 +3,11 @@
   "version": 2,
   "projects": {
     "shell": "apps/shell",
-    "shell-e2e": "apps/shell-e2e"
+    "shell-e2e": "apps/shell-e2e",
+    "vertrieb": "apps/vertrieb",
+    "vertrieb-domain": "libs/vertrieb/domain",
+    "vertrieb-e2e": "apps/vertrieb-e2e",
+    "vertrieb-feature-haendler-suche": "libs/vertrieb/feature-haendler-suche",
+    "vertrieb-ui-common": "libs/vertrieb/ui-common"
   }
 }

@@ -1,0 +1,87 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/vertrieb/src",
+  "prefix": "nx-monorepo",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/vertrieb",
+        "index": "apps/vertrieb/src/index.html",
+        "main": "apps/vertrieb/src/main.ts",
+        "polyfills": "apps/vertrieb/src/polyfills.ts",
+        "tsConfig": "apps/vertrieb/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/vertrieb/src/favicon.ico", "apps/vertrieb/src/assets"],
+        "styles": ["apps/vertrieb/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/vertrieb/src/environments/environment.ts",
+              "with": "apps/vertrieb/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "vertrieb:build:production"
+        },
+        "development": {
+          "browserTarget": "vertrieb:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "vertrieb:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/vertrieb/**/*.ts", "apps/vertrieb/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/vertrieb"],
+      "options": {
+        "jestConfig": "apps/vertrieb/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["domain:vertrieb", "type:app"]
+}

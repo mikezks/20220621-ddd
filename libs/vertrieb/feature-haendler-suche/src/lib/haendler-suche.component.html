@@ -1,0 +1,9 @@
+<h1>vertrieb-haendler-suche</h1>
+
+<table class="table">
+  <tr *ngFor="let haendler of haendlerList$ | async">
+    <td>{{ haendler.id }}</td>
+    <td>{{ haendler.name }}</td>
+    <td>{{ haendler.description }}</td>
+  </tr>
+</table>
