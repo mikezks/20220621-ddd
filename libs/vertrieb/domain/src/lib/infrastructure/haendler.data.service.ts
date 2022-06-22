@@ -28,6 +28,11 @@ export class HaendlerDataService {
         name: 'Duis autem',
         description: 'Duis autem vel eum iriure dolor in hendrerit',
       },
+      {
+        id: 4,
+        name: 'Trainer was here! :)',
+        description: 'Duis autem vel eum iriure dolor in hendrerit',
+      },
     ]);
   }
 }

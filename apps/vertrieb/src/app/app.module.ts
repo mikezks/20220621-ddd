@@ -14,7 +14,7 @@ const routes: Routes = [
       pathMatch: 'full'
   },
   {
-      path: 'vertrag',
+      path: 'vertrieb',
       loadChildren: () => import('@nx-monorepo/vertrieb/feature-haendler-suche')
           .then(esm => esm.VertriebFeatureHaendlerSucheModule)
   }

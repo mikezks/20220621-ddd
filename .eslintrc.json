@@ -15,11 +15,7 @@
               {
                 "sourceTag": "type:app",
                 "onlyDependOnLibsWithTags": [
-                  "type:api",
-                  "type:feature",
-                  "type:ui",
-                  "type:domain-logic",
-                  "type:util"
+                  "type:feature"
                 ]
               },
               {

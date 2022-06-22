@@ -8,7 +8,17 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild([{ path: '', component: HaendlerSucheComponent }]),
+    RouterModule.forChild([
+      {
+        path: '',
+        redirectTo: 'search',
+        pathMatch: 'full'
+      },
+      {
+        path: 'search',
+        component: HaendlerSucheComponent
+      }
+    ]),
     VertriebDomainModule,
     VertriebEditModule
   ],
